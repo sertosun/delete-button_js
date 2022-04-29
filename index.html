@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/9def274ed7.js" crossorigin="anonymous"></script>
+    <title>Delete Button</title>
+</head>
+
+<body>
+
+    <!-- container start -->
+    <div class="container">
+        <i class="fa-solid fa-xmark" id="allClose" onclick="closeContainer()"></i>
+        <div class="heading">
+            <h1 class="title" id="title">Daten jetzt löschen ?</h1>
+            <p class="sub_title" id="sub_title">
+                Ihre Daten werden für immer gelöscht. Sind Sie sich sicher ?
+            </p>
+        </div>
+        <div class="warning">
+            <i class="info fa-solid fa-triangle-exclamation" id="info"></i>
+            <p class="warning_message" id="warning_message">
+                Die Dateien werden unwiderruflich gelöscht und können nicht
+                wiederhergestellt werden.
+            </p>
+        </div>
+
+        <div class="button_container">
+            <button class="cancel" id="cancel" onclick="closeContainer()">Cancel</button>
+            <button class="yes_delete" id="yes_delete" onclick="deleteElements()">JA, Löschen</button>
+        </div>
+    </div>
+    <!-- container end -->
+
+    <!-- button start -->
+    <button class="delete_btn" id="delete_btn" onclick="openContainer()">
+        <i class="trash fa-solid fa-trash-can"></i> Delete
+    </button>
+    <!-- button end -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>

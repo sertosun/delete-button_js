@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Press+Start+2P&family=Raleway:wght@300;400;700;800&family=Roboto:wght@400;500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  flex-direction: column;
+  gap: 3rem;
+  background-color: rgb(77, 2, 2);
+  color: white;
+}
+
+:root {
+  font-family: "Roboto", sans-serif;
+  --someColor: rgb(180, 3, 3);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 60px;
+  border-radius: 10px;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+  color: black;
+  overflow: hidden;
+  transition: all 300ms;
+}
+/* wird hinzugefügt nachdem man auf den deleteButton klickt */
+.container.active {
+  width: 500px;
+  height: 400px;
+  transition: all 300ms;
+}
+
+.delete_btn {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  width: 210px;
+  height: 65px;
+  font-size: 1.5rem;
+  background-color: rgb(18, 140, 144);
+  color: white;
+  border: none;
+  transition: all 200ms;
+}
+
+.delete_btn:hover {
+  transform: scale(0.98);
+  border-radius: 10px;
+  background-color: rgb(32, 175, 180);
+}
+
+.trash {
+  margin-right: 10px;
+}
+
+#allClose {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  font-size: 2rem;
+  color: rgb(182, 182, 182);
+  cursor: pointer;
+  transition: all 300ms;
+}
+
+#allClose:hover {
+  color: var(--someColor);
+  transform: scale(1.05);
+}
+.heading {
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.title {
+  font-size: 2rem;
+  color: rgb(61, 61, 61);
+  user-select: none;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  transition: all 500ms;
+  transform: translateX(-200px);
+  opacity: 0;
+}
+
+.container.active .title,
+.container.active .sub_title {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.sub_title {
+  color: rgb(107, 107, 107);
+  width: 70%;
+  margin: auto;
+  letter-spacing: 1px;
+  font-weight: 500;
+  line-height: 1.4rem;
+  transition: all 800ms;
+  transform: translateX(-200px);
+  opacity: 0;
+}
+
+p {
+  user-select: none;
+}
+
+.warning {
+  position: relative;
+  padding: 0rem 1rem;
+  width: 80%;
+  height: 100px;
+  background-color: transparent;
+  border: 3px dotted black;
+  border-radius: inherit;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.info {
+  font-size: 3rem;
+  margin-left: 1rem;
+  color: var(--someColor);
+  transition: all 1000ms;
+  transform: translateX(-100px);
+  opacity: 0;
+}
+
+.warning_message {
+  letter-spacing: 1px;
+  color: rgb(61, 61, 61);
+  font-weight: 500;
+  transition: all 800ms;
+  transform: translateX(-300px);
+  opacity: 0;
+}
+
+.container.active .info,
+.container.active .warning_message {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+button {
+  min-width: 150px;
+  padding: 0.9rem 3rem;
+  border: 0;
+  outline: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.button_container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.2rem;
+}
+
+.cancel {
+  background-color: transparent;
+  border: 2px solid var(--someColor);
+  border-radius: 10px;
+  transition: transform 200ms;
+}
+
+.cancel:hover,
+.yes_delete:hover {
+  transform: scale(1.05);
+}
+
+.yes_delete {
+  background-color: var(--someColor);
+  color: white;
+  border-radius: 10px;
+  transition: transform 200ms;
+}
